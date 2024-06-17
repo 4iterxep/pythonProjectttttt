@@ -1,0 +1,24 @@
+{% extends 'main/layout.html' %}
+
+{% load static %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block main_style %}
+background: url('{% static 'main/img/photo.jpg' %}') no-repeat center / cover;
+color: white;
+{% endblock %}
+
+{% block custom_link %}{% endblock %}
+
+{% block content %}
+    <h1 class="center_text" style="padding-top: 80px;">Контакты</h1>
+    <br>
+    <h3 class="center_text">На этой странице вы можете ознакомиться с нашими контактами</h3>
+    <br>
+    <p style="font-weight: 600;" class="center_text">Наши социальные сети:</p>
+    <p class="center_text">Телеграмм: <a href="#"> kuponator</a></p>
+    <p class="center_text">ВКонтакте: <a href="#"> kuponator</a></p>
+    <p class="center_text">Ватсапп: <a href="#"> kuponator</a></p>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Каталог{% endblock %}
+{% block main_style %}
+background: url('{% static 'main/img/photo.jpg' %}') no-repeat center / cover;
+{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center; margin-top: 20px;">Каталог купонов</h1>
+<div class=" align-items-center" style="margin-top: 50px; text-align: center; padding-left: 550px;">
+
+    {% for el in kupons %}
+    <a href="{% url 'kupon_detail' el.id %}" class="nav-link" style="margin-bottom: 20px;">
+        <div class="alert alert-dark col" style="margin: 5px;max-width:400px;max-height:130px;min-width:400px;min-height:130px;">
+            <h3>{{ el.title }}</h3>
+            <p>{{ el.description }}</p>
+
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

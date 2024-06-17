@@ -1,0 +1,24 @@
+{% extends 'main/layout.html' %}
+
+{% load static %}
+
+{% block title %}Профиль{% endblock %}
+{% block main_style %}
+background: url('{% static 'main/img/photo.jpg' %}') no-repeat center / cover;
+{% endblock %}
+
+{% block content %}
+
+<div class="contaner" style="color: white; text-align: center; padding-top: 230px;">
+    {% if user.is_authenticated %}
+        <p class="nav-link">Ваш имейл: {{ user }}</p>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success">Выйти из аккаунта</button>
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}" class="btn btn-success">Войти в аккаунт</a>
+        <a href="{% url 'register' %}" class="btn btn-success">Создать аккаунт</a>
+    {% endif %}
+</div>
+{% endblock %}
